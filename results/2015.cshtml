@@ -1,0 +1,209 @@
+﻿@{
+    var db = Database.Open("i2mc");
+    var select1 = "SELECT * FROM Team_9_10 ORDER BY Rank";
+    var select2 = "SELECT * FROM Indiv_9_10 ORDER BY Rank";
+    var select3 = "SELECT * FROM Team_11_12 ORDER BY Rank";
+    var select4 = "SELECT * FROM Indiv_11_12 ORDER BY Rank";
+}
+
+<!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=11.0000">   
+<TITLE>I2MC Results</TITLE> 
+ <LINK href="../css/bootstrap.min.css" rel="stylesheet">     <!-- Custom CSS --> 
+    <LINK href="../css/stylish-portfolio.css" rel="stylesheet">     <!-- Custom Fonts --> 
+    <LINK href="../font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+    <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">--> 
+    <LINK href="../css.css" rel="stylesheet" type="text/css">   
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/.co/3.7.0/.co.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]--> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+           <A class="btn btn-dark btn-lg toggle" id="menu-toggle" 
+href="/results/2015.cshtml/#"><I class="fa fa-bars"></I></A>   
+          <nav id="sidebar-wrapper">
+<UL class="sidebar-nav"><A class="btn btn-light btn-lg pull-right toggle" id="menu-close" 
+  href="/results/2015.cshtml/#"><I class="fa fa-times"></I></A>             
+  <LI class="sidebar-brand"><A href="http://i2mc.co/#top">I2MC</A></LI>
+  <LI><A href="http://i2mc.co/#about">About</A></LI>
+  <LI><A href="http://i2mc.co/#schedule">Schedule</A></LI>
+  <LI><A href="http://i2mc.co/#contact">Contact</A></LI>
+  <LI><A href="http://i2mc.co/results/results.html">Past Results</A></LI>
+  <LI><A href="http://i2mc.co/contests/contests.html">Past Contests</A></LI>  
+  <LI><A href="https://docs.google.com/forms/d/1Y4PX9emIh7fZa403SkJWUqnLiXpL73jcv834tFGjOt0/edit?usp=sharingo">Register</A></LI></UL></nav><!-- Header --> 
+        <header class ="header" id ="top">
+            <div class="text-vertical-center">
+                <h1 style ="color: rgb(255, 255, 255); margin-top: -15%;">I2MC 2015</h1>
+                </br>
+                <h1 style ="color: rgb(255, 255, 255); margin-top: -15%;">Contest Results</h1>
+                </div>
+            </header>
+        
+         <aside class= "callout"id ="9_10_team">
+             <div class ="container">
+                 <br /> 
+             <h1 style ="color: rgb(255, 255, 255);">9/10 Team Competition</h1>
+        <table class="table">
+            <thead>
+                <tr> 
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Rank</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Team No.</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">School</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 1</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 2</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 3</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 4</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var row in db.Query(select1)){
+                    <tr>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.rank</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.team</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.school</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_1</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_2</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_3</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_4</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.total</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            </div>
+        </aside>
+        <aside class= "callout"id ="9_10_indiv">
+             <div class ="container">
+                 <br /> 
+             <h1 style ="color: rgb(255, 255, 255);">9/10 Individual Competition</h1>
+        <table class="table">
+            <thead>
+                <tr> 
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Rank</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Team No.</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">School</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Name</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Finals</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var row in db.Query(select2)){
+                    <tr>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.rank</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.team</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.school</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.finals</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.total</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            </div>
+        </aside>
+        <aside class= "callout"id ="11_12_team">
+             <div class ="container">
+                 <br /> 
+             <h1 style ="color: rgb(255, 255, 255);">11/12 Team Competition</h1>
+        <table class="table">
+            <thead>
+                <tr> 
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Rank</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Team No.</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">School</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 1</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 2</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 3</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Member 4</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var row in db.Query(select3)){
+                    <tr>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.rank</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.team</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.school</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_1</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_2</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_3</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name_4</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.total</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            </div>
+        </aside>
+        <aside class= "callout"id ="11_12_indiv">
+             <div class ="container">
+                 <br /> 
+             <h1 style ="color: rgb(255, 255, 255);">11/12 Individual Competition</h1>
+        <table class="table">
+            <thead>
+                <tr> 
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Rank</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Team No.</th>
+                 <th style ="color: rgb(255, 255, 255); margin-top: -15%;">School</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Name</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Finals</th>
+                    <th style ="color: rgb(255, 255, 255); margin-top: -15%;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var row in db.Query(select4)){
+                    <tr>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.rank</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.team</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.school</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.name</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.finals</td>
+                        <td style ="color: rgb(255, 255, 255); margin-top: -15%;">@row.total</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            </div>
+        </aside>
+        </body>
+
+</html>
+<script src="../js/jquery-1.11.0.js"></script>    
+<script src="../js/bootstrap.min.js"></script>
+<script>
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>

@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=11.0000">   
+<TITLE>I2MC Past Contests</TITLE> 
+ <LINK href="../css/bootstrap.min.css" rel="stylesheet">     <!-- Custom CSS --> 
+    <LINK href="../css/stylish-portfolio.css" rel="stylesheet">     <!-- Custom Fonts --> 
+    <LINK href="../font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+    <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">--> 
+    <LINK href="../css.css" rel="stylesheet" type="text/css">   
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/.co/3.7.0/.co.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]--> 
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+      <A class="btn btn-dark btn-lg toggle" id="menu-toggle" 
+href="/results/results.html/#"><I class="fa fa-bars"></I></A>   
+          <nav id="sidebar-wrapper">
+<UL class="sidebar-nav"><A class="btn btn-light btn-lg pull-right toggle" id="menu-close" 
+  href="/results/results.html/#"><I class="fa fa-times"></I></A>             
+  <LI class="sidebar-brand"><A href="http://i2mc.co/#top">I2MC</A></LI>
+  <LI><A href="http://i2mc.co/#about">About</A></LI>
+  <LI><A href="http://i2mc.co/#schedule">Schedule</A></LI>
+  <LI><A href="http://i2mc.co/#contact">Contact</A></LI>
+  <LI><A href="http://i2mc.co/results/results.html">Past Results</A></LI>
+  <LI><A href="http://i2mc.co/contests/contests.html">Past Contests</A></LI>  
+  <LI><A href="https://docs.google.com/forms/d/1Y4PX9emIh7fZa403SkJWUqnLiXpL73jcv834tFGjOt0/edit?usp=sharingo">Register</A></LI></UL></nav><!-- Header --> 
+        <header class ="header" id ="top">
+            <div class="text-vertical-center">
+                <h1 style ="color: rgb(255, 255, 255); margin-top: -15%;">Past Results</h1>
+                </br>
+                <h2 style ="color: rgb(255, 255, 255); margin-top: 0%;"><a href="./2015.cshtml">2015</a></h2>
+            </div>
+            </header>
+        
+    </body>
+    </html>
+<script src="../js/jquery-1.11.0.js"></script>    
+<script src="../js/bootstrap.min.js"></script>
+<script>
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
